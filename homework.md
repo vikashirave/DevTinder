@@ -9,3 +9,9 @@ Install nodemon and update scrips inside package.json
 what are dependencies
 what is the use of "-g" while npm install
 diffrence between caret and tilde (^ vs ~)
+
+Initialize Git
+.gitignore
+Create a remote repo on github
+Push all code to remote origin
+Play with routes and route extensions ex. /hello, /, hello/2, /xyz
