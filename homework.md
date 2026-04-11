@@ -18,3 +18,21 @@ Play with routes and route extensions ex. /hello, /, hello/2, /xyz
 order of the routes matter
 Install Postman app and make workspace collection
 Write logic to handle GET, POST, PATCH, DELETE API Calls and test them on Postman,
+/user?name='vikas req.query used for fetch data
+/user/:userId  req.params used for fetch dynamic value in url
+
+-Explor routing and use of ?, +, (), * in the routes
+ use of regex in routes /a/
+ reading query params in the routes
+ reading the dynamic routes
+
+ Multiple route handlers - play with the code
+ next()
+ next function and errors along with res.send()
+ app.use("/use", rh, [rH2, rH3], rH4, rH5);
+what is middleware? why do we need it?
+how express Js basically handles requests behind the scenes
+app.use vs app.all find the exact diffrence
+write a dummy auth middleware for admin
+write a dummy auth middleware for user except user/login
+Error handling using app.use
