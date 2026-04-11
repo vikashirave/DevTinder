@@ -36,3 +36,10 @@ app.use vs app.all find the exact diffrence
 write a dummy auth middleware for admin
 write a dummy auth middleware for user except user/login
 Error handling using app.use
+
+install mongoose
+connect application to DB / devtinder
+call the connectdb function and connect to db before  starting the applcation on 3000
+create a user schema & user model
+create / signup documents  using API calls.
+Error handling for api
