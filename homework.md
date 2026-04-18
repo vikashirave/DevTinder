@@ -42,4 +42,18 @@ connect application to DB / devtinder
 call the connectdb function and connect to db before  starting the applcation on 3000
 create a user schema & user model
 create / signup documents  using API calls.
-Error handling for api
+Error handling using try and catch
+
+Js object vs JSON diff
+add the express.json middleware to your app
+Make your signup API dynamic to recive data from the end user
+User.findOne with duplicate email ids which object returned
+API - GET user by email
+API - Feed API - GET / feed - get all the users from the database
+API - GET user by ID 
+create a delete user API
+Diffrence between Put abd Patch API
+
+- Explore schematype options from the documentations
+- put all appropriat validation on your schema
+- add timestamps to schema
