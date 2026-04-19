@@ -4,9 +4,12 @@ const User = require("./models/user");
 const mongoose = require("mongoose");
 const {validateSignUpData} = require("./utils/validation");
 const bcrypt = require("bcrypt");
+const cookieParser = require("cookie-parser");
+const jwt = require("jsonwebtoken");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.post("/signup", async(req, res)=>{
     try {
@@ -14,10 +17,10 @@ app.post("/signup", async(req, res)=>{
         validateSignUpData(req);
 
         // encrypt the password
-        const {password} = req.body;
+        const {firstName, lastName, emailId, password} = req.body;
         const passwordHash = await bcrypt.hash(password, 10)
 
-        const user = new User({firstName, lastName, emailId, passord: passwordHash});
+        const user = new User({firstName, lastName, emailId, password: passwordHash});
 
         await user.save();
         res.send("User Added successfully");
@@ -38,6 +41,12 @@ app.post("/login", async(req, res) => {
         const isPasswordValid = await bcrypt.compare(password, user.password);
         
         if (isPasswordValid) {
+
+            //create a jwt token
+
+            const token = await jwt.sign({_id:user._id}, "DEV@Tinder@790");
+
+            res.cookie('token', token)
             res.status(200).send("Login successfull.");
         }
         else {
@@ -47,6 +56,31 @@ app.post("/login", async(req, res) => {
         res.status(400).send("ERROR" + err);
     }
 });
+
+app.get("/profile", async(req, res) => {
+    try {
+        const cookies = req.cookies;
+        const {token} = cookies;
+
+        if(!token){
+            throw new Error("Invalid Token");
+        }
+
+        //validate token 
+        const decodedMessage = await jwt.verify(token, "DEV@Tinder@790");
+        const {_id} = decodedMessage;
+
+        const user = await User.findById(_id);
+
+        if (!user) {
+            throw new Error("User not exist");
+        }
+
+        res.send(user);
+    } catch(err) {
+        res.status(400).send("Something went wrong." + err);
+    }
+})
 
 app.get("/user", async(req, res)=>{
     try {

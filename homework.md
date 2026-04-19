@@ -57,3 +57,20 @@ Diffrence between Put abd Patch API
 - Explore schematype options from the documentations
 - put all appropriat validation on your schema
 - add timestamps to schema
+- Add API Level validation on patch request & signup post api
+- Install validator
+-explore validator library function and use validator func for password, email, photoURL
+
+- Validate data in Signup API
+- Install bcrypt package
+- Create passwordHash using bcrypt.hash and save the user encrypted password
+- create login API
+- Compare passwords and throw error if email or password is invalid
+
+- install cookie-parse
+- just send a dummy cookie to user
+- create GET /profile API and check if you get the cookie back
+- install jsonwebtoken
+- In login API, after email and password validation, create a jwt token and send it to user 
+- read the cookie inside your profile API and find the logged in user.
+
