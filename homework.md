@@ -73,4 +73,5 @@ Diffrence between Put abd Patch API
 - install jsonwebtoken
 - In login API, after email and password validation, create a jwt token and send it to user 
 - read the cookie inside your profile API and find the logged in user.
+- user Auth middleware
 
