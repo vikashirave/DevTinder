@@ -78,4 +78,3 @@ Diffrence between Put abd Patch API
 - Explore tinder APIs.
 - create a list all API you can think of in Dev Tinder.
 - Group multiple routes under respective routers.
-- 
