@@ -75,3 +75,7 @@ Diffrence between Put abd Patch API
 - read the cookie inside your profile API and find the logged in user.
 - user Auth middleware
 
+- Explore tinder APIs.
+- create a list all API you can think of in Dev Tinder.
+- Group multiple routes under respective routers.
+- 
