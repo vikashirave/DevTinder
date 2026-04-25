@@ -82,3 +82,12 @@ Diffrence between Put abd Patch API
 - Create routes folder for managing auth, profile, request routers
 - create authRouter, profileRouter, requestRouter
 - Import this routers in app.js
+- Create logout, profile/edit , profile/password API
+- make you validate all data in every POST, PATCH APIs
+
+- proper validation the api
+- $or and $and query https://www.mongodb.com/docs/manual/reference/mql/query-predicates/logical/
+- Read more about indexes
+- why do we need index in DB
+- advantage and disadvantage of creating
+- Read this article about compond indexs - 
