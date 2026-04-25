@@ -12,7 +12,7 @@ const adminAuth = ('/admin', (req, res, next) => {
     }
 })
 
-const userAuth = ('/admin', async(req, res, next) => {
+const userAuth = async(req, res, next) => {
     try{
         // Read the token 
         const {token} = req.cookies;
@@ -30,9 +30,9 @@ const userAuth = ('/admin', async(req, res, next) => {
         req.user = user;
         next();
     } catch(err){
-        res.status(400).send("ERROR:", + err.message);
+        res.status(400).send("ERROR:" + err.message);
     }
-})
+}
 
 module.exports = {
     adminAuth,

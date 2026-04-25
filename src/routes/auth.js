@@ -20,7 +20,7 @@ authRouter.post("/signup", async(req, res)=>{
         await user.save();
         res.send("User Added successfully");
     } catch (err){
-        res.status(500).send("Error saving the user: " + err)
+        res.status(500).send("Error saving the user: " + err);
     }
 });
 
@@ -33,8 +33,6 @@ authRouter.post("/login", async(req, res) => {
             throw new Error("User details not valid.");
         }
 
-        console.log(password);
-
         const isPasswordValid = await user.validatePassword(password);
         
         if (isPasswordValid) {
@@ -43,7 +41,7 @@ authRouter.post("/login", async(req, res) => {
 
             const token = await user.getJWT();
 
-            res.cookie('token', token)
+            res.cookie('token', token,  {expires: new Date(Date.now() + 8 + 3600000)});
             res.status(200).send("Login successfull.");
         }
         else {
@@ -53,5 +51,13 @@ authRouter.post("/login", async(req, res) => {
         res.status(400).send("ERROR" + err);
     }
 });
+
+authRouter.post("/logout", async(req, res) => {
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+    });
+    res.send("Logout successfully..");
+});
+console.log("hirv");
 
 module.exports = authRouter;

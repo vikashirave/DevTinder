@@ -78,3 +78,7 @@ Diffrence between Put abd Patch API
 - Explore tinder APIs.
 - create a list all API you can think of in Dev Tinder.
 - Group multiple routes under respective routers.
+- Read documentation for express.Router
+- Create routes folder for managing auth, profile, request routers
+- create authRouter, profileRouter, requestRouter
+- Import this routers in app.js
