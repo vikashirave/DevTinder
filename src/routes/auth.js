@@ -42,7 +42,7 @@ authRouter.post("/login", async(req, res) => {
             const token = await user.getJWT();
 
             res.cookie('token', token,  {expires: new Date(Date.now() + 8 + 3600000)});
-            res.status(200).send("Login successfull.");
+            res.status(200).send(user);
         }
         else {
             throw new Error("User details is not valid");
